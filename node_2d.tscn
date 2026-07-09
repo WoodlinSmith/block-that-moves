@@ -1,0 +1,267 @@
+[gd_scene format=4 uid="uid://damfn784l7to2"]
+
+[ext_resource type="Script" uid="uid://bkttex8epforv" path="res://scripts/player.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://u26doxewlgee" path="res://scripts/node_2d.gd" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://cqofvp4e3dneg" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dxgkmhgu5dcfh" path="res://scripts/robomover.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bybphkqymm3rn" path="res://scripts/pause_menu.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://c7ij2ebflarc1" path="res://scripts/game_over_message.gd" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://c5y108fmjcjve" path="res://scripts/movement_Timer.gd" id="6_rj586"]
+[ext_resource type="Script" uid="uid://crhppmosjxo78" path="res://scripts/exitbutton.gd" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://dqk61gmc63ks5" path="res://scripts/time_left_bar.gd" id="9_4d7sh"]
+[ext_resource type="Script" uid="uid://cvcw0kfxuqrx6" path="res://movement_timer_poller.gd" id="10_ir8iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(150, 148)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
+resource_name = "MyFirstTileset"
+texture = ExtResource("1_wtcfe")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_epypp"]
+sources/1 = SubResource("TileSetAtlasSource_0e48y")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(1148, 31)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
+texture = ExtResource("1_wtcfe")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_d21ai"]
+sources/0 = SubResource("TileSetAtlasSource_kdubu")
+
+[node name="Base" type="Node2D" unique_id=462651022]
+script = ExtResource("1_q6r6c")
+
+[node name="PauseMenu" type="ItemList" parent="." unique_id=513337204]
+process_mode = 3
+visible = false
+top_level = true
+offset_right = 1152.0
+offset_bottom = 655.0
+item_count = 1
+item_0/text = "Return To Menu"
+script = ExtResource("4_0hol4")
+
+[node name="PC" type="CharacterBody2D" parent="." unique_id=943803023]
+script = ExtResource("1_epypp")
+
+[node name="PCCollisionBox" type="CollisionShape2D" parent="PC" unique_id=1651274145]
+position = Vector2(574, 368)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="PCTile" type="TileMapLayer" parent="PC" unique_id=1728512104]
+tile_map_data = PackedByteArray("AAAgABMAAQAAAAAAAAAgABQAAQAAAAEAAAAgABUAAQAAAAIAAAAgABYAAQAAAAMAAAAgABcAAQAAAAQAAAAgABgAAQAAAAUAAAAgABkAAQAAAAYAAAAgABoAAQAAAAcAAAAhABMAAQABAAAAAAAhABQAAQABAAEAAAAhABUAAQABAAIAAAAhABYAAQABAAMAAAAhABcAAQABAAQAAAAhABgAAQABAAUAAAAhABkAAQABAAYAAAAhABoAAQABAAcAAAAiABMAAQACAAAAAAAiABQAAQACAAEAAAAiABUAAQACAAIAAAAiABYAAQACAAMAAAAiABcAAQACAAQAAAAiABgAAQACAAUAAAAiABkAAQACAAYAAAAiABoAAQACAAcAAAAjABMAAQADAAAAAAAjABQAAQADAAEAAAAjABUAAQADAAIAAAAjABYAAQADAAMAAAAjABcAAQADAAQAAAAjABgAAQADAAUAAAAjABkAAQADAAYAAAAjABoAAQADAAcAAAAkABMAAQAEAAAAAAAkABQAAQAEAAEAAAAkABUAAQAEAAIAAAAkABYAAQAEAAMAAAAkABcAAQAEAAQAAAAkABgAAQAEAAUAAAAkABkAAQAEAAYAAAAkABoAAQAEAAcAAAAlABMAAQAFAAAAAAAlABQAAQAFAAEAAAAlABUAAQAFAAIAAAAlABYAAQAFAAMAAAAlABcAAQAFAAQAAAAlABgAAQAFAAUAAAAlABkAAQAFAAYAAAAlABoAAQAFAAcAAAAmABMAAQAGAAAAAAAmABQAAQAGAAEAAAAmABUAAQAGAAIAAAAmABYAAQAGAAMAAAAmABcAAQAGAAQAAAAmABgAAQAGAAUAAAAmABkAAQAGAAYAAAAmABoAAQAGAAcAAAAnABMAAQAHAAAAAAAnABQAAQAHAAEAAAAnABUAAQAHAAIAAAAnABYAAQAHAAMAAAAnABcAAQAHAAQAAAAnABgAAQAHAAUAAAAnABkAAQAHAAYAAAAnABoAAQAHAAcAAAA=")
+tile_set = SubResource("TileSet_epypp")
+script = ExtResource("2_0e48y")
+
+[node name="MovementTimer" type="Timer" parent="PC" unique_id=735869718]
+wait_time = 10.0
+one_shot = true
+script = ExtResource("6_rj586")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=143741406]
+physics_material_override = SubResource("PhysicsMaterial_epypp")
+
+[node name="FloorCollisionBox" type="CollisionShape2D" parent="Floor" unique_id=502826577]
+position = Vector2(574, 624)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="FloorTile" type="TileMapLayer" parent="Floor" unique_id=1471040840]
+tile_map_data = PackedByteArray("AAAAACYAAAAAAAAAAAAAACcAAAAAAAEAAAABACYAAAABAAAAAAABACcAAAABAAEAAAACACYAAAACAAAAAAACACcAAAACAAEAAAADACYAAAADAAAAAAADACcAAAADAAEAAAAEACYAAAAEAAAAAAAEACcAAAAEAAEAAAAFACYAAAAFAAAAAAAFACcAAAAFAAEAAAAGACYAAAAAAAAAAAAGACcAAAAAAAEAAAAHACYAAAABAAAAAAAHACcAAAABAAEAAAAIACYAAAACAAAAAAAIACcAAAACAAEAAAAJACYAAAADAAAAAAAJACcAAAADAAEAAAAKACYAAAAEAAAAAAAKACcAAAAEAAEAAAALACYAAAAFAAAAAAALACcAAAAFAAEAAAAMACYAAAAAAAAAAAAMACcAAAAAAAEAAAANACYAAAABAAAAAAANACcAAAABAAEAAAAOACYAAAACAAAAAAAOACcAAAACAAEAAAAPACYAAAADAAAAAAAPACcAAAADAAEAAAAQACYAAAAEAAAAAAAQACcAAAAEAAEAAAARACYAAAAFAAAAAAARACcAAAAFAAEAAAASACYAAAAGAAAAAAASACcAAAAGAAEAAAATACYAAAAHAAAAAAATACcAAAAHAAEAAAAUACYAAAAAAAAAAAAUACcAAAAAAAEAAAAVACYAAAABAAAAAAAVACcAAAABAAEAAAAWACYAAAACAAAAAAAWACcAAAACAAEAAAAXACYAAAADAAAAAAAXACcAAAADAAEAAAAYACYAAAAEAAAAAAAYACcAAAAEAAEAAAAZACYAAAAFAAAAAAAZACcAAAAFAAEAAAAaACYAAAAGAAAAAAAaACcAAAAGAAEAAAAbACYAAAAHAAAAAAAbACcAAAAHAAEAAAAcACYAAAAAAAAAAAAcACcAAAAAAAEAAAAdACYAAAABAAAAAAAdACcAAAABAAEAAAAeACYAAAACAAAAAAAeACcAAAACAAEAAAAfACYAAAADAAAAAAAfACcAAAADAAEAAAAgACYAAAAEAAAAAAAgACcAAAAEAAEAAAAhACYAAAAFAAAAAAAhACcAAAAFAAEAAAAiACYAAAAGAAAAAAAiACcAAAAGAAEAAAAjACYAAAAHAAAAAAAjACcAAAAHAAEAAAAkACYAAAAAAAAAAAAkACcAAAAAAAEAAAAlACYAAAABAAAAAAAlACcAAAABAAEAAAAmACYAAAACAAAAAAAmACcAAAACAAEAAAAnACYAAAADAAAAAAAnACcAAAADAAEAAAAoACYAAAAEAAAAAAAoACcAAAAEAAEAAAApACYAAAAFAAAAAAApACcAAAAFAAEAAAAqACYAAAAGAAAAAAAqACcAAAAGAAEAAAArACYAAAAHAAAAAAArACcAAAAHAAEAAAAsACYAAAAAAAAAAAAsACcAAAAAAAEAAAAtACYAAAABAAAAAAAtACcAAAABAAEAAAAuACYAAAACAAAAAAAuACcAAAACAAEAAAAvACYAAAADAAAAAAAvACcAAAADAAEAAAAwACYAAAAEAAAAAAAwACcAAAAEAAEAAAAxACYAAAAFAAAAAAAxACcAAAAFAAEAAAAyACYAAAAGAAAAAAAyACcAAAAGAAEAAAAzACYAAAAHAAAAAAAzACcAAAAHAAEAAAA0ACYAAAAAAAAAAAA0ACcAAAAAAAEAAAA1ACYAAAABAAAAAAA1ACcAAAABAAEAAAA2ACYAAAACAAAAAAA2ACcAAAACAAEAAAA3ACYAAAADAAAAAAA3ACcAAAADAAEAAAA4ACYAAAAEAAAAAAA4ACcAAAAEAAEAAAA5ACYAAAAFAAAAAAA5ACcAAAAFAAEAAAA6ACYAAAAGAAAAAAA6ACcAAAAGAAEAAAA7ACYAAAAHAAAAAAA7ACcAAAAHAAEAAAA8ACYAAAAAAAAAAAA8ACcAAAAAAAEAAAA9ACYAAAABAAAAAAA9ACcAAAABAAEAAAA+ACYAAAACAAAAAAA+ACcAAAACAAEAAAA/ACYAAAADAAAAAAA/ACcAAAADAAEAAABAACYAAAAAAAAAAABAACcAAAAAAAEAAABBACYAAAABAAAAAABBACcAAAABAAEAAABCACYAAAACAAAAAABCACcAAAACAAEAAABDACYAAAADAAAAAABDACcAAAADAAEAAABEACYAAAAEAAAAAABEACcAAAAEAAEAAABFACYAAAAFAAAAAABFACcAAAAFAAEAAABGACYAAAAGAAAAAABGACcAAAAGAAEAAABHACYAAAAHAAAAAABHACcAAAAHAAEAAAA=")
+tile_set = SubResource("TileSet_d21ai")
+
+[node name="GameOverContainer" type="CenterContainer" parent="." unique_id=254919499]
+visible = false
+top_level = true
+offset_left = -6.0
+offset_top = 1.0
+offset_right = 1141.0
+offset_bottom = 645.0
+script = ExtResource("6_kdubu")
+
+[node name="Panel" type="Panel" parent="GameOverContainer" unique_id=596672957]
+layout_mode = 2
+
+[node name="GameOverText" type="Label" parent="GameOverContainer/Panel" unique_id=43706928]
+layout_mode = 0
+offset_left = -78.0
+offset_top = -130.0
+offset_right = 91.0
+offset_bottom = -107.0
+text = "You Lose! Game Over!"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOverContainer" unique_id=19960607]
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="GameOverContainer/CenterContainer" unique_id=1698705595]
+process_mode = 3
+layout_mode = 2
+text = "Go Back to Main Menu"
+script = ExtResource("7_d21ai")
+
+[node name="TimeLeftBar" type="ProgressBar" parent="." unique_id=273618862]
+offset_right = 537.0
+offset_bottom = 54.0
+max_value = 10.0
+step = 1.0
+value = 10.0
+rounded = true
+show_percentage = false
+script = ExtResource("9_4d7sh")
+
+[node name="MovementTimerPoller" type="Timer" parent="TimeLeftBar" unique_id=1610425222]
+autostart = true
+script = ExtResource("10_ir8iy")
+
+[node name="Label" type="Label" parent="." unique_id=1214820282]
+offset_left = 548.0
+offset_top = 2.0
+offset_right = 664.0
+offset_bottom = 49.0
+text = "Time Left"
+
+[connection signal="item_clicked" from="PauseMenu" to="PauseMenu" method="_on_item_clicked"]
+[connection signal="playermove" from="PC" to="PC/MovementTimer" method="_on_pc_playermove"]
+[connection signal="playermove" from="PC" to="TimeLeftBar" method="_on_pc_playermove"]
+[connection signal="playerstationary" from="PC" to="PC/MovementTimer" method="_on_pc_playerstationary"]
+[connection signal="gameover" from="PC/MovementTimer" to="." method="_on_movement_timer_gameover"]
+[connection signal="gameover" from="PC/MovementTimer" to="GameOverContainer" method="_on_movement_timer_gameover"]
+[connection signal="time_left_response" from="PC/MovementTimer" to="TimeLeftBar" method="_on_movement_timer_time_left_response"]
+[connection signal="timeout" from="PC/MovementTimer" to="PC" method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="PC/MovementTimer" to="PC/MovementTimer" method="_on_timeout"]
+[connection signal="pressed" from="GameOverContainer/CenterContainer/MainMenuButton" to="." method="_on_button_pressed"]
+[connection signal="timeleftpoll" from="TimeLeftBar/MovementTimerPoller" to="PC/MovementTimer" method="_on_movement_timer_poller_timeleftpoll"]
+[connection signal="timeout" from="TimeLeftBar/MovementTimerPoller" to="TimeLeftBar/MovementTimerPoller" method="_on_timeout"]
