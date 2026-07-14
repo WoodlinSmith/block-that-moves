@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 signal playermove
 signal playerstationary
 
-
+var snooze_hit = false
 
 
 
@@ -27,6 +27,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if snooze_hit:
+		velocity.x = 0
+		velocity.y = 0
 
 	if(velocity.x <= 0.01 && velocity.x >= -0.01 && velocity.y >= -0.01 && velocity.y <= 0.01):
 		playerstationary.emit()
@@ -35,3 +39,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	
+
+
+func _on_snooze_box_body_entered(body: Node2D) -> void:
+	if(body is CharacterBody2D):
+		snooze_hit = true

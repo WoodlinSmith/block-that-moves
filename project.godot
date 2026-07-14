@@ -13,7 +13,7 @@ config_version=5
 config/name="BlockThatMoves"
 run/main_scene="uid://d3r23l6yw0k34"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Textures/icon.svg"
 
 [input]
 
