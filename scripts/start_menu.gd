@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	if(index == 0):
 		print("Clicked Start!")
-		get_tree().change_scene_to_file("res://node_2d.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
 	elif(index == 1):
 		print("Clicked Quit!")
 		get_tree().quit()
