@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d02ndethhyifj"]
+
+[ext_resource type="Script" uid="uid://dkj1v0di48p7e" path="res://scripts/snooze_box.gd" id="1_ffqic"]
+[ext_resource type="Texture2D" uid="uid://ca661ui5s0c3q" path="res://Textures/snooze.bmp" id="2_oqnmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw3qm"]
+size = Vector2(249, 189)
+
+[node name="SnoozeBox" type="Area2D" unique_id=3788282]
+script = ExtResource("1_ffqic")
+
+[node name="SnoozeTexture" type="Sprite2D" parent="." unique_id=1506071397]
+position = Vector2(28.50004, -75.500015)
+scale = Vector2(0.13085933, 0.17812496)
+texture = ExtResource("2_oqnmc")
+
+[node name="SnoozeColl" type="CollisionShape2D" parent="." unique_id=1255308353]
+position = Vector2(30, -78)
+shape = SubResource("RectangleShape2D_pw3qm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

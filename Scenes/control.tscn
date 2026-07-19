@@ -10,34 +10,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartMenu" type="ItemList" parent="." unique_id=42456993]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1623852454]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.273
-anchor_top = 0.31500003
-anchor_right = 0.726
-anchor_bottom = 0.73600006
-offset_left = -0.4960022
-offset_top = -20.12001
-offset_right = -0.35198975
-offset_bottom = 0.07196045
+anchor_right = 0.9990001
+anchor_bottom = 1.008
+offset_right = 0.15185547
+offset_bottom = -0.184021
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=522237590]
+layout_mode = 2
+text = "Block! That Moves!"
+horizontal_alignment = 1
+
+[node name="StartMenu" type="ItemList" parent="VBoxContainer" unique_id=42456993]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
 item_count = 2
 item_0/text = "Start"
 item_1/text = "Quit"
 script = ExtResource("1_0fbet")
 
-[node name="Title" type="Label" parent="." unique_id=522237590]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.106000006
-anchor_right = 0.56700003
-anchor_bottom = 0.26700002
-offset_left = 3.1999817
-offset_top = -2.6880035
-offset_right = 2.815979
-offset_bottom = -3.0160065
-text = "Block! That Moves!"
-horizontal_alignment = 1
-
-[connection signal="item_clicked" from="StartMenu" to="StartMenu" method="_on_item_clicked"]
+[connection signal="item_clicked" from="VBoxContainer/StartMenu" to="VBoxContainer/StartMenu" method="_on_item_clicked"]
