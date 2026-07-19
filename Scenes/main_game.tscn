@@ -91,6 +91,7 @@ wait_time = 10.0
 one_shot = true
 script = ExtResource("5_erobn")
 
+[connection signal="remove_eor_collision" from="." to="Floor" method="_on_base_remove_eor_collision"]
 [connection signal="playermove" from="PC" to="MovementTimer" method="_on_pc_playermove"]
 [connection signal="playerstationary" from="PC" to="MovementTimer" method="_on_pc_playerstationary"]
 [connection signal="endofroad" from="Floor" to="." method="_on_floor_endofroad" flags=3]

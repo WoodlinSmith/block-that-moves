@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgxwycv2k668b" path="res://scripts/floor.gd" id="1_agfsv"]
 [ext_resource type="Texture2D" uid="uid://cqofvp4e3dneg" path="res://Textures/icon.svg" id="1_nvnu3"]
+[ext_resource type="Script" uid="uid://w1jblgtxjpjs" path="res://scripts/end_of_road.gd" id="3_wjf51"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_epypp"]
 
@@ -95,9 +96,11 @@ tile_set = SubResource("TileSet_d21ai")
 
 [node name="EndOfRoad" type="Area2D" parent="." unique_id=860916215]
 position = Vector2(1088, 298)
+script = ExtResource("3_wjf51")
 
 [node name="EndOfRoadCollision" type="CollisionShape2D" parent="EndOfRoad" unique_id=189395478]
 position = Vector2(1, 5.25)
 shape = SubResource("RectangleShape2D_sc0op")
 
+[connection signal="floor_clone_complete" from="." to="EndOfRoad" method="_on_floor_floor_clone_complete"]
 [connection signal="body_entered" from="EndOfRoad" to="." method="_on_end_of_road_body_entered"]

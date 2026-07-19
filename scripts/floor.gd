@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 signal endofroad(pos: Vector2)
+signal floor_clone_complete
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,3 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_end_of_road_body_entered(body: Node2D) -> void:
 	endofroad.emit(global_position)
+
+
+func _on_base_remove_eor_collision() -> void:
+	floor_clone_complete.emit()

@@ -1,6 +1,7 @@
 extends Node2D
 
 var floor_scene = preload("res://Scenes/floor.tscn")
+signal remove_eor_collision
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,4 +34,6 @@ func _on_floor_endofroad(pos: Vector2) -> void:
 
 	get_tree().root.add_child(floor_add)
 	floor_add.global_position = pos_offset
+	remove_eor_collision.emit()
+
 	
